@@ -1,3 +1,5 @@
+<?php $this->extends('layout'); ?>
+
 <main role="main">
     <?php
     // Perform the main page loop.
