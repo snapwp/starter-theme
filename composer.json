@@ -24,7 +24,7 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "echo To finish installation, please run the following command: php install-snap"
+            "Snap\\Commands\\Install::install_theme"
         ]
     }
 }
