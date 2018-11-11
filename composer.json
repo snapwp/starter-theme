@@ -1,9 +1,9 @@
 {
-    "name": "snapwp/snap-theme-bootstrap",
+    "name": "snapwp/snap-theme",
     "type": "wordpress-theme",
     "license": "MIT",
-    "description": "WordPress Bootstrap 4 starter theme, utilising the Snap theme framework.",
-    "homepage": "https://github.com/snapwp/snap-theme-bootstrap",
+    "description": "Starter theme for the SnapWP framework.",
+    "homepage": "https://github.com/snapwp/snap-theme",
     "authors": [
         {
             "name": "Jake Whiteley",
@@ -19,8 +19,7 @@
         "snapwp/snap-core": ">=0.3"
     },
     "require-dev": {
-        "snapwp/snap-debug": "^1.0.2",
-        "symfony/process": "^4.1"
+        "snapwp/snap-debug": "^1.0.2"
     },
     "scripts": {
         "post-create-project-cmd": [
