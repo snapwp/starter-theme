@@ -1,7 +1,7 @@
 {
     "name": "snapwp/snap-theme",
     "type": "wordpress-theme",
-    "license": "MIT",
+    "license": "GPL-3.0-or-later",
     "description": "Starter theme for the SnapWP framework.",
     "homepage": "https://github.com/snapwp/snap-theme",
     "authors": [
