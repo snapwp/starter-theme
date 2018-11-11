@@ -1,31 +1,32 @@
-const mix = require('laravel-mix');
-const path = require('path');
+const Mix = require('laravel-mix');
+const Path = require('path');
 
-let src = (relPath) => path.resolve(__dirname, 'resources/assets/src/', relPath),
-	dist = (relPath) => path.resolve(__dirname, 'dist/', relPath);
+let src = (relPath) => Path.resolve(__dirname, 'resources/assets/src/', relPath),
+	dist = (relPath) => Path.resolve(__dirname, 'dist/', relPath);
 
-mix.webpackConfig({
+// Use window version of jQuery.
+Mix.webpackConfig({
 	externals: {
 		"jquery": "jQuery"
 	}
 });
 
-mix
-	.setPublicPath('dist')
-	.setResourceRoot('../')
-	.options({ processCssUrls: false })
-	.sass(src('sass/style.scss'), dist('css'))
-	.copyDirectory(src('images'), dist('images'))
-	.js(src('scripts/theme.js'), dist('scripts'))
-	.version();
+// Setup Laravel Mix.
+Mix.setPublicPath('dist');
+Mix.setResourceRoot('../');
+Mix.options({ processCssUrls: false });
 
-if (mix.inProduction()) {
-	mix
-		.options({ processCssUrls: false });
+Mix.sass(src('sass/style.scss'), dist('css'));
+Mix.js(src('scripts/theme.js'), dist('scripts'));
+Mix.copyDirectory(src('images'), dist('images'));
+
+if (!Mix.inProduction()) {
+	// Include sourcemaps.
+	Mix.webpackConfig({
+		devtool: 'source-map'
+	});
+	Mix.sourceMaps();
 } else {
-	mix
-		.webpackConfig({
-			devtool: 'source-map'
-		})
-		.sourceMaps();
+	// Append unique version ID to cache-bust production assets.
+	Mix.version();
 }
