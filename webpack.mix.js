@@ -2,7 +2,7 @@ const Mix = require('laravel-mix');
 const Path = require('path');
 
 let src = (relPath) => Path.resolve(__dirname, 'resources/assets/src/', relPath),
-	dist = (relPath) => Path.resolve(__dirname, 'dist/', relPath);
+	public = (relPath) => Path.resolve(__dirname, 'public/', relPath);
 
 // Use window version of jQuery.
 Mix.webpackConfig({
@@ -12,13 +12,13 @@ Mix.webpackConfig({
 });
 
 // Setup Laravel Mix.
-Mix.setPublicPath('dist');
+Mix.setPublicPath('public');
 Mix.setResourceRoot('../');
 Mix.options({ processCssUrls: false });
 
-Mix.sass(src('sass/style.scss'), dist('css'));
-Mix.js(src('scripts/theme.js'), dist('scripts'));
-Mix.copyDirectory(src('images'), dist('images'));
+Mix.sass(src('sass/style.scss'), public('css'));
+Mix.js(src('scripts/theme.js'), public('scripts'));
+Mix.copyDirectory(src('images'), public('images'));
 
 if (!Mix.inProduction()) {
 	// Include sourcemaps.
