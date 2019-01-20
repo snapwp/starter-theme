@@ -1,4 +1,4 @@
-<?php $this->extends('layout'); ?>
+<?php $this->extends('layouts.main'); ?>
 
 <main role="main">
     <?php

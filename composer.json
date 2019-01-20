@@ -23,7 +23,7 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "Snap\\Commands\\Install::install_theme"
+            "Snap\\Commands\\Install::run"
         ]
     }
 }

@@ -1,32 +1,38 @@
-const Mix = require('laravel-mix');
-const Path = require('path');
+const mix = require('laravel-mix');
+const path = require('path');
 
-let src = (relPath) => Path.resolve(__dirname, 'resources/assets/src/', relPath),
-	public = (relPath) => Path.resolve(__dirname, 'public/', relPath);
+let src = (relPath) => path.resolve(__dirname, 'resources/assets/', relPath),
+    dist = (relPath) => path.resolve(__dirname, 'public/', relPath);
 
-// Use window version of jQuery.
-Mix.webpackConfig({
-	externals: {
-		"jquery": "jQuery"
-	}
+// If you are using jQuery via CDN, let webpack know.
+mix.webpackConfig({
+    externals: {
+        "jquery": "jQuery"
+    }
 });
 
-// Setup Laravel Mix.
-Mix.setPublicPath('public');
-Mix.setResourceRoot('../');
-Mix.options({ processCssUrls: false });
+// Set some basic options.
+mix.setPublicPath('public')
+    .setResourceRoot('../');
 
-Mix.sass(src('sass/style.scss'), public('css'));
-Mix.js(src('scripts/theme.js'), public('scripts'));
-Mix.copyDirectory(src('images'), public('images'));
+mix.js(src('scripts/theme.js'), dist('scripts'))
 
-if (!Mix.inProduction()) {
-	// Include sourcemaps.
-	Mix.webpackConfig({
-		devtool: 'source-map'
-	});
-	Mix.sourceMaps();
-} else {
-	// Append unique version ID to cache-bust production assets.
-	Mix.version();
+	// Run SASS compilation using node-sass.
+    .sass(src('sass/style.scss'), dist('css'), {
+        implementation: require('node-sass')
+    })
+
+    // Copy any images from resources to public.
+    .copyDirectory(src('images'), dist('images'))
+
+    // Append version strings in mix-manifest.
+    .version();
+
+if (!mix.inProduction()) {
+    // Include separate source maps in development builds.
+    mix.webpackConfig({
+        devtool: 'source-map'
+    });
+
+    mix.sourceMaps();
 }

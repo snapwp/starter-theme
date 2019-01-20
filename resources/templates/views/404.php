@@ -1,4 +1,4 @@
-<?php $this->extends('layout'); ?>
+<?php $this->extends('layouts.main'); ?>
 
 <main role="main">
 	<h1>Your content could not be found</h1>
