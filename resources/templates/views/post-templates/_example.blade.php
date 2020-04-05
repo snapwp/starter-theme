@@ -1,7 +1,7 @@
 <?php
 /*
 Template Name: Example Template
-Template Post Type: post, page, product
+Template Post Type: post, page
 */
 ?>
 

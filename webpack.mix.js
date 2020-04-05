@@ -18,12 +18,10 @@ mix.setPublicPath('public')
 mix.js(src('scripts/theme.js'), dist('scripts'))
 
 	// Run SASS compilation using node-sass.
-    .sass(src('sass/style.scss'), dist('css'), {
-        implementation: require('node-sass')
-    })
+    .sass(src('sass/style.scss'), dist('css'))
 
     // Copy any images from resources to public.
-    .copyDirectory(src('images'), dist('images'))
+    .copyDirectory(src('images/placeholders'), dist('images/placeholders'))
 
     // Append version strings in mix-manifest.
     .version();

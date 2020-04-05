@@ -3,12 +3,12 @@
 namespace Theme\Http\Controllers;
 
 use Snap\Http\Request;
-use Snap\Services\View;
+use Snap\Http\Response;
 
 class Example
 {
-    public function index(Request $request)
+    public function index(Request $request, Response $response)
     {
-        View::render('index');
+        $response->view('index');
     }
 }

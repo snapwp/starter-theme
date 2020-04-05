@@ -1,2 +1,2 @@
-<h4>Oh snap!</h4>
+<h2>oh Snap!</h2>
 <p>We have no content to show you.</p>

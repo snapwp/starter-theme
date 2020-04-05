@@ -10,6 +10,7 @@
 * Version 1.0.0
 *
 * Wordpress theme framework.
+* Bootstrap 4 edition.
 *
 * View our Github: https://github.com/snapwp
 */

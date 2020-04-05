@@ -7,7 +7,7 @@ namespace Theme;
  *
  * This means registering scripts, sidebars and menus.
  */
-class Theme_Setup extends \Snap\Hookables\Theme
+class ThemeSetup extends \Snap\Hookables\Theme
 {
     /**
      * Declare theme support.
@@ -23,7 +23,14 @@ class Theme_Setup extends \Snap\Hookables\Theme
             'search-form',
             'gallery',
             'caption'
-        ]
+        ],
+
+        // Remove annoying gutenberg features
+        'editor-color-palette',
+        'disable-custom-colors',
+        'editor-font-sizes',
+        'disable-custom-font-sizes',
+        'responsive-embeds',
     ];
 
     /**
@@ -40,8 +47,8 @@ class Theme_Setup extends \Snap\Hookables\Theme
      */
     public function enqueue_theme_assets()
     {
-        \wp_enqueue_style('bootstrap', \snap_get_asset_url('/css/style.css'));
-        \wp_enqueue_script('bootstrap', \snap_get_asset_url('/scripts/theme.js'), ['jquery'], false, true);
+        wp_enqueue_style('bootstrap', snap_get_asset_url('/css/style.css'));
+        wp_enqueue_script('bootstrap', snap_get_asset_url('/scripts/theme.js'), ['jquery'], false, true);
     }
 
     /**
@@ -49,6 +56,14 @@ class Theme_Setup extends \Snap\Hookables\Theme
      */
     public function register_theme_widgets()
     {
-        // Put your calls to register_sidebar in here.
+        register_sidebar([
+            'name' => __('Sidebar', 'snap'),
+            'id' => 'sidebar-main',
+            'description' => __('General sidebar for the website.', 'snap'),
+            'before_widget' => '<div>',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4>',
+            'after_title'   => '</h4>',
+        ]);
     }
 }

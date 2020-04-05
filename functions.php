@@ -1,5 +1,9 @@
 <?php
 
+if (defined('SNAP_DOING_COMMAND') && SNAP_DOING_COMMAND) {
+    return;
+}
+
 include('vendor/autoload.php');
 
 /**
@@ -10,5 +14,5 @@ include('vendor/autoload.php');
 try {
     Snap\Core\Snap::setup();
 } catch (Exception $e) {
-   \wp_die('Could not start snap: ' . $e->getMessage());
+    wp_die('Could not start snap: ' . $e->getMessage());
 }

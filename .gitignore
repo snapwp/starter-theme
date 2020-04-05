@@ -1,10 +1,8 @@
-dist/css
-dist/images
-dist/scripts
-dist/mix-manifest.json
+public
+!public/routes.php
 node_modules/
 vendor/
 package-lock.json
 composer.lock
-resources/assets/src/sass/_variables.scss
-cache/templates/*.bladec
+cache/templates/
+!cache/templates/index.php

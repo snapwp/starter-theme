@@ -1,3 +1,1 @@
-/**
- * Your site's JS entry point.
- */
+// Application entry-point
