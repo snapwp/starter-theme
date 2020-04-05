@@ -27,14 +27,6 @@ return [
 
 
     /**
-     * Disable Post Tags because they suck.
-     *
-     * @var bool
-     */
-    'disable_tags' => true,
-
-
-    /**
      * Whether to use the asset version strings added by wp_enqueue_script/style functions.
      *
      * @var bool

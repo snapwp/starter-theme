@@ -6,10 +6,9 @@ return [
      *
      * @var array
      */
-	'providers' => [
-		Snap\Debug\Debug_Service_Provider::class,
-	],
-
+    'providers' => [
+        Snap\Debug\DebugServiceProvider::class,
+    ],
 
     /**
      * Alias a given class to another class.

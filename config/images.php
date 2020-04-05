@@ -19,7 +19,7 @@ return [
      *
      * @var string|false
      */
-	'placeholder_dir' => 'dist/images/placeholders/',
+	'placeholder_dir' => 'public/images/placeholders/',
 
 
 	/**
@@ -32,15 +32,12 @@ return [
 	'supports_featured_images' => true,
 
 
-	/**
-	 * Set to true to remove all default image sizes apart from full size and thumbnail.
-	 *
-	 * We would recommend leaving this as true, and then defining your own image sizes below.
-	 * This way the uploads directory clutter is reduced and the site takes up less space.
+    /**
+     * Removes any rewrite rules associated with attachments.
      *
-     * @var bool
-	 */
-    'reset_image_sizes' => true,
+     * You may need to save permalinks for this to take effect.
+     */
+    'disable_attachment_permalinks' => true,
 
 
     /**
@@ -60,9 +57,15 @@ return [
      * }
      */
     'image_sizes' => [
+        // Unset these default sizes as they aren't really needed
+        'medium' => false,
+        'medium_large' => false,
+        'large' => false,
+
         // This is a full column width image for inserting into pages/posts.
-        'post_full_column' => [730, 99999, false, 'Full Width'],
+        //'post_full_width' => [730, 99999, false, 'Full Width Image'],
     ],
+
 
     /**
      * These image sizes are NOT generated for all images upon upload.
@@ -76,7 +79,10 @@ return [
      * @var array|bool
      */
     'dynamic_image_sizes' => [
-        'post_featured_image' => [730, 450, true],
+        'size_200' => [200, 200, true],
+        //'size_400' => [400, 400, true],
+        //'size_500' => [500, 500, true],
+        //'size_800' => [800, 800, true],
     ],
 
 
@@ -85,7 +91,7 @@ return [
      *
      * @var string
      */
-    'insert_image_default_size' => 'post_full_column',
+    'insert_image_default_size' => 'post_full_width',
 
 
     /**
