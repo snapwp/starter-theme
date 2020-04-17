@@ -2,14 +2,14 @@
 
 namespace Theme;
 
-use\Snap\Hookables\Theme;
+use Snap\Hookables\Theme;
 
 /**
  * Setup theme.
  *
  * This means registering scripts, sidebars and menus.
  */
-class ThemeSetup extends Theme
+class Bootstrap extends Theme
 {
     /**
      * Declare theme support.
@@ -19,13 +19,7 @@ class ThemeSetup extends Theme
      * @var array
      */
     protected $supports = [
-        'html5' => [
-            'comment-list',
-            'comment-form',
-            'search-form',
-            'gallery',
-            'caption'
-        ],
+        'html5' => ['comment-list', 'comment-form', 'search-form', 'gallery', 'caption'],
 
         // Remove annoying gutenberg features
         'editor-color-palette',
@@ -45,27 +39,36 @@ class ThemeSetup extends Theme
     ];
 
     /**
+     * Boot up your theme!
+     */
+    public function boot(): void
+    {
+        $this->addAction('widgets_init', 'registerThemeWidgets');
+        $this->addAction('wp_enqueue_scripts', 'enqueueThemeAssets');
+    }
+
+    /**
      * Enqueue the theme CSS files.
      */
-    public function enqueue_theme_assets()
+    public function enqueueThemeAssets(): void
     {
-        wp_enqueue_style('bootstrap', snap_get_asset_url('/css/style.css'));
-        wp_enqueue_script('bootstrap', snap_get_asset_url('/scripts/theme.js'), ['jquery'], false, true);
+        wp_enqueue_style('theme-styles', snap_get_asset_url('/css/style.css'));
+        wp_enqueue_script('theme-scripts', snap_get_asset_url('/scripts/theme.js'), ['jquery'], false, true);
     }
 
     /**
      * Register the theme's widgets.
      */
-    public function register_theme_widgets()
+    public function registerThemeWidgets(): void
     {
         register_sidebar([
             'name' => __('Sidebar', 'snap'),
             'id' => 'sidebar-main',
-            'description' => __('General sidebar for the website.', 'snap'),
+            'description' => __('Widgets in this area will be shown on all content', 'snap'),
             'before_widget' => '<div>',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h4>',
-            'after_title'   => '</h4>',
+            'after_widget' => '</div>',
+            'before_title' => '<h4>',
+            'after_title' => '</h4>',
         ]);
     }
 }
