@@ -2,12 +2,23 @@
 
 return [
     /**
-     * Add the Fully Qualified Names of the Providers to be added to this SnapWP theme.
+     * External service providers.
+     * These are run during the Snap initialization process.
      *
      * @var array
      */
     'providers' => [
         Snap\Debug\DebugServiceProvider::class,
+    ],
+
+    /**
+     * Register your theme's providers.
+     * These are run after Snap has been initialized.
+     *
+     * @var array
+     */
+    'theme_providers' => [
+        \Theme\Providers\ThemeProvider::class
     ],
 
     /**

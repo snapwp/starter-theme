@@ -1,6 +1,6 @@
 <?php
 
-namespace Theme;
+namespace Theme\Providers;
 
 use Snap\Services\ServiceProvider;
 
@@ -12,7 +12,7 @@ class ThemeProvider extends ServiceProvider
     /**
      * Register any services you theme uses into the service container.
      */
-    public function register()
+    public function register(): void
     {
         // Container::add(Example::class, function() {
         //     return new Example();
