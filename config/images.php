@@ -3,8 +3,8 @@
 return [
 	/**
      * The default upload quality of image media.
-     * 
-     * Smaller numbers give smaller uploaded image sizes, but with reduced image quality. 
+     *
+     * Smaller numbers give smaller uploaded image sizes, but with reduced image quality.
      * Setting to 100 will actually increase uploaded image size!
      *
      * @var int
@@ -63,7 +63,7 @@ return [
         'large' => false,
 
         // This is a full column width image for inserting into pages/posts.
-        //'post_full_width' => [730, 99999, false, 'Full Width Image'],
+        'post_full_width' => [760, 0, false, 'Full Width Image'],
     ],
 
 
@@ -79,10 +79,7 @@ return [
      * @var array|bool
      */
     'dynamic_image_sizes' => [
-        'size_200' => [200, 200, true],
-        //'size_400' => [400, 400, true],
-        //'size_500' => [500, 500, true],
-        //'size_800' => [800, 800, true],
+        'post_featured_image' => [760, 468, true]
     ],
 
 

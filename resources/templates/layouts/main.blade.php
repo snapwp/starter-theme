@@ -11,22 +11,26 @@
 	</head>
 
 	<body itemscope itemtype="http://schema.org/WebPage" class="{{ implode(' ', get_body_class()) }}">
+        @include('partials.navigation')
 
-		@include('partials.navigation')
+        <div class="container">
+            <main itemscope itemprop="mainContentOfPage">
+                @yield('main')
+            </main>
 
-        <main role="main" itemscope itemprop="mainContentOfPage">
-            @yield('main')
-        </main>
+            <aside aria-label="Sidebar widgets">
+                @section('sidebar')
+                    @if(is_active_sidebar('sidebar-main'))
+                        @sidebar('sidebar-main')
+                    @else
+                        <h4>Go to wp-admin to add your first widget</h4>
+                    @endif
+                @show
+            </aside>
 
-        <aside role="complementary" aria-label="Sidebar widgets">
-            @section('sidebar')
-                @sidebar('sidebar-main')
-            @show
-        </aside>
+            @include('partials.footer')
 
-		@include('partials.footer')
-
-		@wpfooter
-
+            @wpfooter
+        </div>
 	</body>
 </html>
