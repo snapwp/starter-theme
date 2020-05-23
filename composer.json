@@ -14,9 +14,9 @@
         "wordpress"
     ],
     "require": {
-        "php": ">=7.1",
-        "snapwp/snap-core": "~0.9.2",
-        "snapwp/snap-debug": "~1.0",
+        "php": ">=7.2",
+        "snapwp/snap-core": "^0.10",
+        "snapwp/snap-debug": "^1.0",
         "snapwp/snap-compatibility": "^1.0"
     },
     "require-dev": {
