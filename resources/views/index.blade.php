@@ -12,5 +12,4 @@
 	@else
 		@include('partials.post-type.none')
 	@endif
-
 @endsection
