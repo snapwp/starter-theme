@@ -1,5 +1,3 @@
-public
-!public/routes.php
 node_modules/
 vendor/
 package-lock.json

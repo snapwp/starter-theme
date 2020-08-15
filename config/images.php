@@ -11,7 +11,6 @@ return [
      */
     'default_image_quality' => 75,
 
-
     /**
      * The location of the placeholder directory relative to the current theme folder.
      *
@@ -20,7 +19,6 @@ return [
      * @var string|false
      */
 	'placeholder_dir' => 'public/images/placeholders/',
-
 
 	/**
 	 * An array of post types to enable featured images for.
@@ -31,14 +29,14 @@ return [
 	 */
 	'supports_featured_images' => true,
 
-
     /**
      * Removes any rewrite rules associated with attachments.
      *
      * You may need to save permalinks for this to take effect.
+     *
+     * @var bool
      */
     'disable_attachment_permalinks' => true,
-
 
     /**
      * Defines all image sizes for the site.
@@ -66,7 +64,6 @@ return [
         'post_full_width' => [760, 0, false, 'Full Width Image'],
     ],
 
-
     /**
      * These image sizes are NOT generated for all images upon upload.
      *
@@ -82,14 +79,12 @@ return [
         'post_featured_image' => [760, 468, true]
     ],
 
-
     /**
      * The default size selected when a user is inserting an image into a post via the editor.
      *
      * @var string
      */
     'insert_image_default_size' => 'post_full_width',
-
 
     /**
      * Whether the full uploaded image size is available to a user when inserting an image.
