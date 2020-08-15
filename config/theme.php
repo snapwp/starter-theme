@@ -9,14 +9,12 @@ return [
      */
 	'disable_xmlrpc' => true,
 
-
     /**
      * Disable comments site wide.
      *
      * @var bool
      */
     'disable_comments' => true,
-
 
     /**
      * Disable the customizer in the admin.
@@ -25,7 +23,6 @@ return [
      */
     'disable_customizer' => true,
 
-
     /**
      * Whether to use the asset version strings added by wp_enqueue_script/style functions.
      *
@@ -33,14 +30,12 @@ return [
      */
     'remove_asset_versions' => true,
 
-
     /**
      * If true, then snap will put defer="true" on enqueued javascript.
      *
      * @var bool
      */
     'defer_scripts' => true,
-
 
     /**
      * An array of the script handles to not add defer to.
@@ -53,7 +48,6 @@ return [
         //'jquery',
     ],
 
-
     /**
      * Completely disable all front end jQuery.
      *
@@ -62,7 +56,6 @@ return [
      * @var bool
      */
     'disable_jquery' => false,
-
 
     /**
      * If not false, then load this version of jquery via the Google CDN instead of the WP jQuery version.

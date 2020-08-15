@@ -11,7 +11,6 @@ return [
      */
     'snap_admin_theme' => true,
 
-
     /**
      * Output custom 'Built using' text in the admin footer.
      *
@@ -21,7 +20,6 @@ return [
      */
 	'footer_text' => false,
 
-
 	/**
 	 * Whether to display the current WordPress version in the admin footer.
      *
@@ -29,13 +27,12 @@ return [
 	 */
 	'show_version' => true,
 
-
 	/**
 	 * Provide a css url to enqueue on the login screen.
      *
      * @var false|string
 	 */
-	'login_extra_css' => false,
+	'login_extra_css' => get_theme_file_uri('public/login-style.css'),
 
 	/**
 	 * Set the logo link url on the login page.
@@ -43,4 +40,11 @@ return [
      * @var string
 	 */
 	'login_logo_url' => home_url(),
+
+    /**
+     * Add an optional login message.
+     *
+     * @var false|string
+     */
+    'login_message' => false,
 ];
