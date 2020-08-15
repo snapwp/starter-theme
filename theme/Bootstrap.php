@@ -19,13 +19,7 @@ class Bootstrap extends Theme
      * @var array
      */
     protected $supports = [
-        'html5' => ['comment-list', 'comment-form', 'search-form', 'gallery', 'caption'],
-
-        // Remove annoying gutenberg features
-        'editor-color-palette',
-        'disable-custom-colors',
-        'editor-font-sizes',
-        'disable-custom-font-sizes',
+        'html5' => ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style',],
         'responsive-embeds',
     ];
 
