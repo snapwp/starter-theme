@@ -1,0 +1,57 @@
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body:not(.interim-login) {
+    background: linear-gradient(45deg, #23d5ab, #23a6d5, #8d6cab, #ee7752);
+    background-size: 400% 400%;
+    animation: gradient 30s ease-in-out infinite;
+}
+
+body:not(.interim-login) #login {
+    box-sizing: border-box;
+    width: 33vw;
+    padding: 10% 2rem 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    min-height: 100vh;
+    background: #fff;
+    min-width: 320px;
+}
+
+body:not(.interim-login).login form {
+    border: none;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: initial;
+}
+
+body:not(.interim-login).login #backtoblog,
+body:not(.interim-login).login #nav {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+body:not(.interim-login) .login-message {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+body:not(.interim-login).login #login_error,
+body:not(.interim-login).login .message,
+body:not(.interim-login).login .success {
+    border-top: 1px solid #afafaf;
+    border-bottom: 1px solid #afafaf;
+    border-right: 1px solid #afafaf;
+}
