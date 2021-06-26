@@ -5,32 +5,28 @@ namespace Theme\Content\PostTypes;
 use Snap\Hookables\PostType;
 
 /**
- * Post description
+ * Post model
  */
 class Post extends PostType
 {
-    protected $singular = 'Post';
+    protected ?string $singular = 'Post';
 
     /**
      * Override the plural name.
-     *
-     * @var string
      */
-    protected $plural = 'Posts';
+    protected ?string $plural = 'Posts';
 
     /**
      * Override the post type default options.
-     *
-     * @var array
      */
-    protected $options = [
+    protected array $options = [
         //
     ];
 
     /**
      * Run after the post type is registered.
      */
-    public function boot()
+    public function boot(): void
     {
         //$this->columns()->add('example_column', 'Example Column');
     }

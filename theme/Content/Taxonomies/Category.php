@@ -11,17 +11,13 @@ class Category extends Taxonomy
 {
     /**
      * Override the plural name.
-     *
-     * @var string
      */
-    public $plural = 'Categories';
+    public ?string $plural = 'Categories';
 
    /**
     * Post types to register this taxonomy for.
-    *
-    * @var array
     */
-    protected $post_types = [
+    protected array $post_types = [
        'post'
     ];
 
@@ -29,16 +25,15 @@ class Category extends Taxonomy
     * Override the post type default options.
     *
     * @see https://codex.wordpress.org/Function_Reference/register_taxonomy#Arguments
-    * @var array
     */
-   public $options = [
+   public array $options = [
        //
    ];
 
    /**
     * Run after the taxonomy is registered.
     */
-   public function boot()
+   public function boot(): void
    {
        //$this->columns()->add('example_column', 'Example Column');
    }

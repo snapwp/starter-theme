@@ -11,31 +11,23 @@ class PostTag extends Taxonomy
 {
     /**
      * Set the taxonomy name.
-     *
-     * @var string
      */
-    public $name = 'post_tag';
+    public ?string $name = 'post_tag';
 
     /**
      * Override the singular name.
-     *
-     * @var string
      */
-    public $singular = 'Tag';
+    public ?string $singular = 'Tag';
 
     /**
      * Override the plural name.
-     *
-     * @var string
      */
-    public $plural = 'Tags';
+    public ?string $plural = 'Tags';
 
    /**
     * Post types to register this taxonomy for.
-    *
-    * @var array
     */
-   protected $post_types = [
+   protected array $post_types = [
        'post'
    ];
 
@@ -43,16 +35,15 @@ class PostTag extends Taxonomy
     * Override the post type default options.
     *
     * @see https://codex.wordpress.org/Function_Reference/register_taxonomy#Arguments
-    * @var array
     */
-   public $options = [
+   public array $options = [
         //
    ];
 
    /**
     * Run after the taxonomy is registered.
     */
-   public function boot()
+   public function boot(): void
    {
        //$this->columns()->add('example_column', 'Example Column');
    }
