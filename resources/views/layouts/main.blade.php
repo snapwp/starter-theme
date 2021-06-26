@@ -1,5 +1,5 @@
 <!doctype html>
-<html {{ get_language_attributes() }} class="no-js">
+<html {!! get_language_attributes() !!} class="no-js">
 
 	<head>
 		<meta charset="{{ get_bloginfo('charset') }}">
@@ -10,11 +10,11 @@
 		@wphead
 	</head>
 
-	<body itemscope itemtype="http://schema.org/WebPage" class="{{ implode(' ', get_body_class()) }}">
+	<body class="{{ implode(' ', get_body_class()) }}">
         @include('partials.navigation')
 
         <div class="container">
-            <main itemscope itemprop="mainContentOfPage">
+            <main>
                 @yield('main')
             </main>
 
