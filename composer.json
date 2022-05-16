@@ -15,7 +15,7 @@
     ],
     "require": {
         "php": ">=7.4",
-        "snapwp/snap-core": "^0.16.0",
+        "snapwp/snap-core": "^0.16.7",
         "snapwp/snap-debug": "^1.0",
         "snapwp/snap-compatibility": "^1.0"
     },

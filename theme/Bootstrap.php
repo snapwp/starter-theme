@@ -47,7 +47,7 @@ class Bootstrap extends Theme
     public function enqueueThemeAssets(): void
     {
         wp_enqueue_style('theme-styles', snap_get_asset_url('/css/style.css'));
-        wp_enqueue_script('theme-scripts', snap_get_asset_url('/scripts/theme.js'), ['jquery'], false, true);
+        wp_enqueue_script('theme-scripts', snap_get_asset_url('/scripts/theme.js'), [], false, true);
     }
 
     /**
@@ -59,9 +59,9 @@ class Bootstrap extends Theme
             'name' => __('Sidebar', 'snap'),
             'id' => 'sidebar-main',
             'description' => __('Widgets in this area will be shown on all content', 'snap'),
-            'before_widget' => '<div>',
+            'before_widget' => '<div class="mb-4">',
             'after_widget' => '</div>',
-            'before_title' => '<h4>',
+            'before_title' => '<h4 class="text-xl mb-2">',
             'after_title' => '</h4>',
         ]);
     }
