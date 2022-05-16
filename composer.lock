@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7c341ff2c6abaa2c3c970897f88bf69f",
+    "content-hash": "49f0906e5333a7943034d806d418ad26",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -496,16 +496,16 @@
         },
         {
             "name": "snapwp/snap-core",
-            "version": "0.16.6",
+            "version": "0.16.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/snapwp/snap-core.git",
-                "reference": "d589184b50544cde4327c7f28457b8dd8bbc4fa4"
+                "reference": "96619883614637e30eb89206890fa33342935115"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snapwp/snap-core/zipball/d589184b50544cde4327c7f28457b8dd8bbc4fa4",
-                "reference": "d589184b50544cde4327c7f28457b8dd8bbc4fa4",
+                "url": "https://api.github.com/repos/snapwp/snap-core/zipball/96619883614637e30eb89206890fa33342935115",
+                "reference": "96619883614637e30eb89206890fa33342935115",
                 "shasum": ""
             },
             "require": {
@@ -553,9 +553,9 @@
             ],
             "support": {
                 "issues": "https://github.com/snapwp/snap-core/issues",
-                "source": "https://github.com/snapwp/snap-core/tree/0.16.6"
+                "source": "https://github.com/snapwp/snap-core/tree/0.16.7"
             },
-            "time": "2022-03-30T13:11:28+00:00"
+            "time": "2022-05-16T17:23:20+00:00"
         },
         {
             "name": "snapwp/snap-debug",
