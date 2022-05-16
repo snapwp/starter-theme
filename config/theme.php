@@ -17,6 +17,13 @@ return [
     'disable_comments' => true,
 
     /**
+     * Restores classic widget editing screen
+     *
+     * @var bool
+     */
+    'disable_widgets_block_editor' => false,
+
+    /**
      * Disable the customizer in the admin.
      *
      * @var bool

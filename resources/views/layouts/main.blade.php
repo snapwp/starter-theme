@@ -10,27 +10,15 @@
 		@wphead
 	</head>
 
-	<body class="{{ implode(' ', get_body_class()) }}">
+	<body class="{{ implode(' ', get_body_class()) }} bg-gray-50">
         @include('partials.navigation')
 
-        <div class="container">
-            <main>
-                @yield('main')
-            </main>
-
-            <aside aria-label="Sidebar widgets">
-                @section('sidebar')
-                    @if(is_active_sidebar('sidebar-main'))
-                        @sidebar('sidebar-main')
-                    @else
-                        <h4>Go to wp-admin to add your first widget</h4>
-                    @endif
-                @show
-            </aside>
+        <div class="container mx-auto px-4">
+			@yield('main')
 
             @include('partials.footer')
-
-            @wpfooter
         </div>
+
+		@wpfooter
 	</body>
 </html>

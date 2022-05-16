@@ -32,6 +32,13 @@ return [
     'disable_block_directory' => true,
 
     /**
+     * Disable the block library CSS injected into the frontend to add default block styles.
+     *
+     * @var bool
+     */
+    'disable_block_library_css' => false,
+
+    /**
      * Completely disable block patterns. (WordPress >= 5.5)
      *
      * @var bool
