@@ -65,21 +65,21 @@ return [
      */
     'disabled_blocks' => [
         /*
-         * Core text blocks
-         */
+        * Core text blocks
+        */
         //'core/paragraph',
         //'core/heading',
         //'core/list',
         //'core/quote',
         //'core/code',
         //'core/preformatted',
-        'core/freeform',
+        //'core/freeform', // classic block
         //'core/pullquote',
         //'core/table',
-        'core/verse',
+        //'core/verse',
 
         /*
-         * Core media blocks
+         * Media blocks
          */
         //'core/image',
         //'core/gallery',
@@ -90,8 +90,8 @@ return [
         //'core/video',
 
         /*
-         * Core layout blocks
-         */
+        * Design blocks
+        */
         //'core/button',
         //'core/buttons',
         //'core/columns',
@@ -101,23 +101,44 @@ return [
         //'core/nextpage',
         //'core/separator',
         //'core/spacer',
-
+        //'core/site-logo',
+        //'core/site-tagline',
+        //'core/site-title',
+        //'core/query-title',
+        //'core/post-terms',
 
         /*
-         * Core widget blocks
+        * Core widget blocks
+        */
+        //'core/shortcode',
+        //'core/archives',
+        //'core/calendar',
+        //'core/categories',
+        //'core/html',
+        //'core/latest-comments',
+        //'core/latest-posts',
+        //'core/page-list',
+        //'core/rss',
+        //'core/social-links',
+        //'core/social-link',
+        //'core/tag-cloud',
+        //'core/search',
+
+        /**
+         * Theme blocks
          */
-        'core/shortcode',
-        'core/archives',
-        'core/calendar',
-        'core/categories',
-        'core/html',
-        'core/latest-comments',
-        'core/latest-posts',
-        'core/rss',
-        'core/search',
-        'core/social-links',
-        'core/social-link',
-        'core/tag-cloud',
+        //'core/query',
+        //'core/post-title',
+        //'core/post-content',
+        //'core/post-date',
+        //'core/post-excerpt',
+        //'core/post-featured-image',
+        //'core/loginout',
+        //'core/navigation',
+        //'core/post-author',
+        //'core/post-navigation-link',
+        //'core/post-comments',
+        //'core/term-description',
 
         /**
          * Core embed blocks
@@ -132,30 +153,30 @@ return [
         //'core-embed/spotify',
         //'core-embed/flickr',
         //'core-embed/vimeo',
-        'core-embed/animoto',
-        'core-embed/cloudup',
-        'core-embed/collegehumor',
-        'core-embed/crowdsignal',
-        'core-embed/dailymotion',
+        //'core-embed/animoto',
+        //'core-embed/cloudup',
+        //'core-embed/collegehumor',
+        //'core-embed/crowdsignal',
+        //'core-embed/dailymotion',
         //'core-embed/imgur',
-        'core-embed/issuu',
+        //'core-embed/issuu',
         //'core-embed/kickstarter',
         //'core-embed/meetup-com',
         //'core-embed/mixcloud',
-        'core-embed/polldaddy',
+        //'core-embed/polldaddy',
         //'core-embed/reddit',
-        'core-embed/reverbnation',
-        'core-embed/screencast',
-        'core-embed/scribd',
+        //'core-embed/reverbnation',
+        //'core-embed/screencast',
+        //'core-embed/scribd',
         //'core-embed/slideshare',
-        'core-embed/smugmug',
-        'core-embed/speaker',
-        'core-embed/speaker-deck',
+        //'core-embed/smugmug',
+        //'core-embed/speaker',
+        //'core-embed/speaker-deck',
         //'core-embed/tiktok',
         //'core-embed/ted',
         //'core-embed/tumblr',
-        'core-embed/videopress',
-        'core-embed/wordpress-tv',
-        'core-embed/amazon-kindle',
+        //'core-embed/videopress',
+        //'core-embed/wordpress-tv',
+        //'core-embed/amazon-kindle',
     ]
 ];
