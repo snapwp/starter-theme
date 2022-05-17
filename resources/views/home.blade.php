@@ -11,7 +11,7 @@
 
 				@paginate
 			@else
-				@include('partials.post-type.none')
+				<x-no-content />
 			@endif
 		</main>
 

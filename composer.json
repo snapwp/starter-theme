@@ -13,14 +13,14 @@
     "keywords": [
         "wordpress"
     ],
-    "require": {
-        "php": ">=7.4",
-        "snapwp/snap-core": "^0.16.7",
-        "snapwp/snap-debug": "^1.0",
-        "snapwp/snap-compatibility": "^1.0"
+    "options": {
+        "symlink": true
     },
-    "require-dev": {
-        "phpunit/phpunit": "^8.2"
+    "require": {
+        "php": "^7.4|^8.0",
+        "snapwp/snap-core": "^0.17",
+        "snapwp/snap-debug": "^1.1",
+        "snapwp/snap-compatibility": "^1.0"
     },
     "scripts": {
         "post-create-project-cmd": [
