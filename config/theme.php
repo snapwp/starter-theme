@@ -7,7 +7,7 @@ return [
      *
      * @var bool
      */
-	'disable_xmlrpc' => true,
+    'disable_xmlrpc' => true,
 
     /**
      * Disable comments site wide.
@@ -36,6 +36,13 @@ return [
      * @var bool
      */
     'remove_asset_versions' => true,
+
+    /**
+     * Disable the loading=lazy attribute on images/video added via the editor.
+     *
+     * @var bool
+     */
+    'disable_lazy_loading' => false,
 
     /**
      * If true, then snap will put defer="true" on enqueued javascript.

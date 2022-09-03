@@ -17,8 +17,8 @@
         "symlink": true
     },
     "require": {
-        "php": "^7.4|^8.0",
-        "snapwp/snap-core": "^0.17",
+        "php": "^8.0",
+        "snapwp/snap-core": "^0.18",
         "snapwp/snap-debug": "^1.1",
         "snapwp/snap-compatibility": "^1.0"
     },
