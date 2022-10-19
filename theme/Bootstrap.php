@@ -3,6 +3,7 @@
 namespace Theme;
 
 use Snap\Hookables\Theme;
+use Snap\Utils\Vite;
 
 /**
  * Setup theme.
@@ -46,8 +47,13 @@ class Bootstrap extends Theme
      */
     public function enqueueThemeAssets(): void
     {
-        wp_enqueue_style('theme-styles', snap_get_asset_url('/css/style.css'));
-        wp_enqueue_script('theme-scripts', snap_get_asset_url('/scripts/theme.js'), [], false, true);
+        // If using vite:
+        Vite::registerScript('resources/assets/scripts/theme.js');
+        Vite::registerStyle('resources/assets/sass/style.scss');
+
+        // If you don't wish to use vite:
+        // wp_enqueue_style('theme-styles', snap_get_asset_url('/css/style.css'));
+        // wp_enqueue_script('theme-scripts', snap_get_asset_url('/scripts/theme.js'), [], false, true);
     }
 
     /**
