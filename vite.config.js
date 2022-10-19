@@ -1,8 +1,11 @@
 import { defineConfig } from 'vite'
 import snap from './vite.plugin'
+const path = require('path')
+
+let rootDir = path.normalize(__dirname.substring(__dirname.match(/wp-content/)['index'] -1)).split(path.sep).join("/")
 
 export default defineConfig({
-	base: process.env.NODE_ENV === 'production' ? `/wp-content/themes/starter-theme/public/` : '/', // todo
+	base: process.env.NODE_ENV === 'production' ? `${rootDir}/public/` : '/',
 	build: {
 		manifest: true,
 		emptyOutDir: true,
