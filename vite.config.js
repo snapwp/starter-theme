@@ -6,6 +6,7 @@ let rootDir = path.normalize(__dirname.substring(__dirname.match(/wp-content/)['
 
 export default defineConfig({
 	base: process.env.NODE_ENV === 'production' ? `${rootDir}/public/` : '/',
+	publicDir: 'resources/public',
 	build: {
 		manifest: true,
 		emptyOutDir: true,

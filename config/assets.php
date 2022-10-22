@@ -33,7 +33,7 @@ return [
      *
      * @var bool
      */
-    'disable_jquery' => false,
+    'disable_jquery' => true,
 
     /**
      * If not false, then load this version of jquery via the Google CDN instead of the WP jQuery version.

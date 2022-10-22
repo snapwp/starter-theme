@@ -4,6 +4,4 @@ cache/templates/*
 .env
 !*/vendor
 /vendor
-public/hot
-public/manifest.json
-public/build
+public/
