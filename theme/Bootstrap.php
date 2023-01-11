@@ -48,8 +48,8 @@ class Bootstrap extends Theme
     public function enqueueThemeAssets(): void
     {
         // If using vite:
-        Vite::registerScript('resources/assets/scripts/theme.js');
-        Vite::registerStyle('resources/assets/sass/style.scss');
+        Vite::registerScript('resources/assets/js/theme.js');
+        Vite::registerStyle('resources/assets/scss/style.scss');
 
         // If you don't wish to use vite:
         // wp_enqueue_style('theme-styles', snap_get_asset_url('/css/style.css'));
