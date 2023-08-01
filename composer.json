@@ -17,10 +17,15 @@
         "symlink": true
     },
     "require": {
-        "php": "^8.0",
+        "php": "^8.1",
         "snapwp/snap-core": "^0.19",
         "snapwp/snap-debug": "^1.1",
         "snapwp/snap-compatibility": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Theme\\": "theme/"
+        }
     },
     "scripts": {
         "post-create-project-cmd": [

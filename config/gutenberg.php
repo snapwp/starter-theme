@@ -175,6 +175,7 @@ return [
 
         'core/post-comments',
         'core/post-comments-form',
+        'core/comments',
         'core/comment-author-name',
         'core/comment-content',
         'core/comment-date',
@@ -186,6 +187,7 @@ return [
         'core/comments-pagination-previous',
 
         'core/post-author-biography',
+        'core/post-author-name',
         'core/term-description',
         'core/read-more',
 
