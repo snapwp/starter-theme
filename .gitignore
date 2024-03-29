@@ -10,6 +10,5 @@ cache/templates/*
 !*/vendor
 /vendor
 public/manifest.json
-/public/build/
-
+public/build/
 public/hot
