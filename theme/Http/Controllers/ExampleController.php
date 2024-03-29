@@ -5,9 +5,9 @@ namespace Theme\Http\Controllers;
 use Snap\Http\Request;
 use Snap\Http\Response;
 
-class Example
+class ExampleController
 {
-    public function index(Request $request, Response $response)
+    public function index(Request $request, Response $response): void
     {
         $response->view('index');
     }
