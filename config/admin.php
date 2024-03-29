@@ -32,7 +32,7 @@ return [
      *
      * @var false|string
 	 */
-	'login_extra_css' => get_theme_file_uri('public/login-style.css'),
+	'login_extra_css' => get_theme_file_uri('login-style.css'),
 
 	/**
 	 * Set the logo link url on the login page.
