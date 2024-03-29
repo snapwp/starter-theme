@@ -28,7 +28,7 @@ class PostTag extends Taxonomy
     * Post types to register this taxonomy for.
     */
    protected array $post_types = [
-       'post'
+
    ];
 
    /**
