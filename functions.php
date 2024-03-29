@@ -5,6 +5,7 @@ if (defined('SNAP_DOING_COMMAND') && SNAP_DOING_COMMAND) {
 }
 
 include('vendor/autoload.php');
+include('theme/helpers.php');
 
 /**
  * Let's kick this off!
