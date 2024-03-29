@@ -1,6 +1,5 @@
 <!doctype html>
-<html {!! get_language_attributes() !!} class="no-js">
-
+<html {!! get_language_attributes() !!}>
 	<head>
 		<meta charset="{{ get_bloginfo('charset') }}">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
