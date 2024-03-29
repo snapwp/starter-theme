@@ -1,0 +1,15 @@
+@use 'components/wp-block-gallery';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+	@apply bg-gray-50;
+}
+
+.is-root-container,
+.edit-post-visual-editor__post-title-wrapper {
+	@apply prose lg:prose-xl mx-auto;
+}

@@ -13,8 +13,9 @@ export default defineConfig({
 		assetsDir: 'build',
 		rollupOptions: {
 			input: {
-				js: 'resources/assets/scripts/theme.js',
-				styles: 'resources/assets/sass/style.scss'
+				js: 'resources/assets/js/theme.js',
+				styles: 'resources/assets/sass/style.scss',
+				editorStyles: 'resources/assets/sass/editor.scss'
 			}
 		}
 	},

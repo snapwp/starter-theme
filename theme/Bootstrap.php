@@ -22,6 +22,7 @@ class Bootstrap extends Theme
     protected $supports = [
         'html5' => ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style',],
         'responsive-embeds',
+        'editor-styles',
     ];
 
     /**
@@ -40,6 +41,7 @@ class Bootstrap extends Theme
     {
         $this->addAction('widgets_init', 'registerThemeWidgets');
         $this->addAction('wp_enqueue_scripts', 'enqueueThemeAssets');
+        $this->addAction('use_widgets_block_editor', '__return_false');
     }
 
     /**
@@ -49,7 +51,7 @@ class Bootstrap extends Theme
     {
         // If using vite:
         Vite::registerScript('resources/assets/js/theme.js');
-        Vite::registerStyle('resources/assets/scss/style.scss');
+        Vite::registerStyle('resources/assets/sass/style.scss');
 
         // If you don't wish to use vite:
         // wp_enqueue_style('theme-styles', snap_get_asset_url('/css/style.css'));
