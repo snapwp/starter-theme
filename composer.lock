@@ -954,16 +954,16 @@
         },
         {
             "name": "snapwp/snap-core",
-            "version": "0.19.13",
+            "version": "0.19.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/snapwp/snap-core.git",
-                "reference": "48359f7391fefd0cfc25af3cb991c4510790c824"
+                "reference": "701db8839159b8e1d0f7727514b05ebc98493bd9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snapwp/snap-core/zipball/48359f7391fefd0cfc25af3cb991c4510790c824",
-                "reference": "48359f7391fefd0cfc25af3cb991c4510790c824",
+                "url": "https://api.github.com/repos/snapwp/snap-core/zipball/701db8839159b8e1d0f7727514b05ebc98493bd9",
+                "reference": "701db8839159b8e1d0f7727514b05ebc98493bd9",
                 "shasum": ""
             },
             "require": {
@@ -1011,9 +1011,9 @@
             ],
             "support": {
                 "issues": "https://github.com/snapwp/snap-core/issues",
-                "source": "https://github.com/snapwp/snap-core/tree/0.19.13"
+                "source": "https://github.com/snapwp/snap-core/tree/0.19.14"
             },
-            "time": "2024-03-05T15:15:32+00:00"
+            "time": "2024-03-30T09:34:19+00:00"
         },
         {
             "name": "snapwp/snap-debug",

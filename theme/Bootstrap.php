@@ -41,7 +41,6 @@ class Bootstrap extends Theme
     {
         $this->addAction('widgets_init', 'registerThemeWidgets');
         $this->addAction('wp_enqueue_scripts', 'enqueueThemeAssets');
-        $this->addAction('use_widgets_block_editor', '__return_false');
     }
 
     /**
