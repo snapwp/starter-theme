@@ -21,7 +21,7 @@ return [
      *
      * @var bool
      */
-    'disable_widgets_block_editor' => false,
+    'disable_widgets_block_editor' => true,
 
     /**
      * Disable the customizer in the admin.
