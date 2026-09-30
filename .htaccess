@@ -1,0 +1,22 @@
+# Stops the theme's source, dependencies and config being served directly.
+#
+# WordPress loads theme files internally, so the only things browsers need are style.css, screenshot.png,
+# login-style.css and the compiled assets in public/. Nginx servers need equivalent rules in the server config.
+
+# Never list directory contents.
+Options -Indexes
+
+# Deny hidden files, PHP, and project manifests/config wherever they are, even without mod_rewrite.
+<FilesMatch "^\.|\.(php|phtml|phar|inc|lock|md|dist|xml|neon|ya?ml|sh|log|sql)$|^(composer|package|package-lock)\.json$|^vite\.config\.|^snap$|^LICENSE$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Hidden directories, such as .git.
+    RewriteRule (^|/)\. - [F,L]
+
+    # Source, dependency, cache and config directories.
+    RewriteRule ^(vendor|node_modules|cache|config|theme|resources|routes|tests?)(/|$) - [F,L,NC]
+</IfModule>
