@@ -1,0 +1,42 @@
+@utility flex-grid {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: var(--flex-grid-gap);
+	--flex-grid-gap: .5rem;
+
+	@variant sm {
+		--flex-grid-gap: 1rem;
+	}
+
+	@variant lg {
+		--flex-grid-gap: 1.5rem;
+	}
+}
+
+@utility w-* {
+	--width-percentage: --value(ratio);
+	width: calc(
+		(var(--width-percentage) * 100%) -
+		(var(--flex-grid-gap, 0rem) * (100 - var(--width-percentage) * 100) / 100)
+	) !important;
+}
+
+@utility offset-* {
+	--offset-percentage: --value(ratio);
+	margin-left:  calc(
+		(var(--offset-percentage) * 100%) +
+		(var(--flex-grid-gap, 0rem) * (var(--offset-percentage) * 100) / 100)
+	);
+}
+
+@utility gap-x-* {
+	--flex-grid-gap: calc(var(--spacing) * --value(integer)) ;
+	column-gap: var(--flex-grid-gap);
+}
+
+@utility gap-* {
+	--flex-grid-gap: calc(var(--spacing) * --value(integer)) ;
+	row-gap: var(--flex-grid-gap);
+	column-gap: var(--flex-grid-gap);
+}
+

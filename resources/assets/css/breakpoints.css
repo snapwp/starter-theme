@@ -1,0 +1,43 @@
+@theme {
+	/* Width-based breakpoints */
+	--breakpoint-*: initial;
+	--breakpoint-xsm: 480px;
+	--breakpoint-sm: 768px;
+	--breakpoint-md: 1024px;
+	--breakpoint-desktop: 1100px;
+	--breakpoint-lg: 1366px;
+	--breakpoint-xlg: 1536px;
+	--breakpoint-xxlg: 1921px;
+	--breakpoint-retina: 2560px;
+	--breakpoint-4k: 3840px;
+}
+
+:root {
+	--breakpoint-ipadpro: (hover: none) and (pointer: coarse) and (min-width: 1024px);
+	--breakpoint-touch: (pointer: coarse);
+	--breakpoint-nottouch: (hover: hover) and (pointer: fine);
+}
+
+@custom-variant ipadpro {
+	@media (hover: none) and (pointer: coarse) and (min-width: 1024px) {
+		& {
+			@slot;
+		}
+	}
+}
+
+@custom-variant touch {
+	@media (pointer: coarse) {
+		& {
+			@slot;
+		}
+	}
+}
+
+@custom-variant nottouch {
+	@media (hover: hover) and (pointer: fine) {
+		& {
+			@slot;
+		}
+	}
+}

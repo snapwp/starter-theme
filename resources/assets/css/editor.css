@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@import "./typography.css";
+@import "./colors.css";
+@import "./breakpoints.css";
+@import "./transitions.css";
+@import "./grid.css";
+@import "./container.css";
+
+body {
+    @apply font-sans;
+}

@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
-import snap from './vite.plugin'
+import tailwindcss from '@tailwindcss/vite'
+import laravel from 'laravel-vite-plugin'
+import { wordpressPlugin } from '@roots/vite-plugin'
 const path = require('path')
 
 let rootDir = path.normalize(__dirname.substring(__dirname.match(/wp-content/)['index'] -1)).split(path.sep).join("/")
@@ -7,19 +9,28 @@ let rootDir = path.normalize(__dirname.substring(__dirname.match(/wp-content/)['
 export default defineConfig({
 	base: process.env.NODE_ENV === 'production' ? `${rootDir}/public/` : '/',
 	build: {
-		manifest: true,
+		// laravel-vite-plugin defaults to Laravel's public/build layout;
+		// override manifest/outDir/assetsDir to match Snap's expected paths
+		// (config/assets.php -> manifest_path: '/public/manifest.json').
+		manifest: 'manifest.json',
 		emptyOutDir: true,
 		outDir: 'public',
 		assetsDir: 'build',
-		rollupOptions: {
-			input: {
-				js: 'resources/assets/js/theme.js',
-				styles: 'resources/assets/sass/style.scss',
-				editorStyles: 'resources/assets/sass/editor.scss'
-			}
-		}
 	},
-	plugins: [snap()],
+	plugins: [
+		laravel({
+			input: [
+				'resources/assets/js/theme.js',
+				'resources/assets/css/main.css',
+				'resources/assets/css/editor.css'
+			],
+			publicDirectory: 'public',
+			buildDirectory: 'build',
+			refresh: true,
+		}),
+		tailwindcss(),
+		wordpressPlugin(),
+	],
 	server: {
 		cors: true,
 		strictPort: true,

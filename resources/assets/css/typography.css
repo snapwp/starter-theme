@@ -1,0 +1,76 @@
+@theme {
+    /* Font sizes */
+    --text-6: 0.375rem;
+    --text-7: 0.4375rem;
+    --text-8: 0.5rem;
+    --text-10: 0.625rem;
+    --text-11: 0.6875rem;
+    --text-12: 0.75rem;
+    --text-14: 0.875rem;
+    --text-16: 1rem;
+    --text-18: 1.125rem;
+    --text-20: 1.25rem;
+    --text-24: 1.5rem;
+    --text-28: 1.75rem;
+    --text-32: 2rem;
+    --text-36: 2.25rem;
+    --text-40: 2.5rem;
+    --text-48: 3rem;
+    --text-50: 3.25rem;
+    --text-56: 3.5rem;
+    --text-60: 3.75rem;
+    --text-64: 4rem;
+    --text-72: 4.5rem;
+    --text-80: 5rem;
+    --text-96: 6rem;
+    --text-118: 7.375rem;
+    --text-128: 8rem;
+    --text-144: 9rem;
+    --text-170: 10.625rem;
+    --text-200: 12.5rem;
+    --text-220: 13.75rem;
+
+    /* line heights */
+    --leading-0\.8: 0.8;
+    --leading-0\.9: 0.9;
+    --leading-1: 1;
+    --leading-1\.1: 1.1;
+    --leading-1\.2: 1.2;
+    --leading-1\.3: 1.3;
+    --leading-1\.4: 1.4;
+    --leading-1\.5: 1.5;
+
+    /* letter spacing */
+    --tracking-0: 0;
+    --tracking-1: 0.01em;
+    --tracking-2: 0.02em;
+    --tracking-3: 0.03em;
+    --tracking-4: 0.04em;
+    --tracking-5: 0.05em;
+    --tracking-10: 0.10em;
+    --tracking-20: 0.17em;
+
+    /* font weights */
+    --font-weight-100: 100;
+    --font-weight-200: 200;
+    --font-weight-300: 300;
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+    --font-weight-600: 600;
+    --font-weight-700: 700;
+    --font-weight-800: 800;
+    --font-weight-900: 900;
+}
+
+
+html {
+    font-size: clamp(12px, calc(16 / 390 * 100vw), 18px);
+
+    @variant sm {
+        font-size: clamp(12px, calc(16 / 1024 * 100vw), 18px);
+    }
+
+    @variant lg {
+        font-size: clamp(12px, calc(16 / 1920 * 100vw), 20px);
+    }
+}

@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@import "../css/typography.css";
+@import "../css/colors.css";
+@import "../css/breakpoints.css";
+@import "../css/transitions.css";
+@import "../css/grid.css";
+@import "../css/container.css";
+
+
+@theme {
+    /* reset the global spacing to be 1px */
+    --spacing: 0.0625rem;
+}

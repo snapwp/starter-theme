@@ -7,7 +7,7 @@ Multiple: false
 --}}
 
 @if($is_preview)
-    <p>Editor context</p>
+    <p class="border border-black">Editor context</p>
 @else
     <p>Frontend context</p>
 @endif

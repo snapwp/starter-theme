@@ -38,14 +38,16 @@ class Gutenberg extends Hookable
      */
     public function boot(): void
     {
+        // Add our own editor styles and remove the default block styles.
+        // These should always be registered, regardless of whether ACF blocks
+        // are enabled, so the editor always reflects the theme's real styles.
+        $this->addAction('init', 'addEditorStyles');
+        $this->addAction('wp_default_styles', 'removeDefaultBlockStylesFromEditor', 9999);
+
+        // Enqueue any additional JS in the editor
+        // $this->addAction('enqueue_block_editor_assets', 'enqueueRawAssets');
+
         if ($this->enabled) {
-            // Add our own editor styles and remove the default block styles
-            $this->addAction('init', 'addEditorStyles');
-            $this->addAction('wp_default_styles', 'removeDefaultBlockStylesFromEditor', 9999);
-
-            // Enqueue any additional JS in the editor
-            // $this->addAction('enqueue_block_editor_assets', 'enqueueRawAssets');
-
             if (function_exists('acf_register_block_type') && $this->blocksPath) {
                 $this->addAction('acf/init', 'registerBlocks');
                 $this->addAction('block_categories_all', 'registerCategories');
@@ -61,7 +63,8 @@ class Gutenberg extends Hookable
      */
     public function addEditorStyles(): void
     {
-        Vite::registerEditorStyle('resources/assets/sass/editor.scss');
+        Vite::registerEditorStyle('resources/assets/css/editor.css');
+        //add_editor_style('resources/assets/css/main.css');
     }
 
     /**

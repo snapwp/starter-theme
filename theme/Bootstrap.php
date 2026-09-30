@@ -41,6 +41,8 @@ class Bootstrap extends Theme
     {
         $this->addAction('widgets_init', 'registerThemeWidgets');
         $this->addAction('wp_enqueue_scripts', 'enqueueThemeAssets');
+        $this->addFilter( 'should_load_separate_core_block_assets', '__return_false' );
+
     }
 
     /**
@@ -50,7 +52,8 @@ class Bootstrap extends Theme
     {
         // If using vite:
         Vite::registerScript('resources/assets/js/theme.js');
-        Vite::registerStyle('resources/assets/sass/style.scss');
+        Vite::registerStyle('resources/assets/css/main.css');
+
 
         // If you don't wish to use vite:
         // wp_enqueue_style('theme-styles', snap_get_asset_url('/css/style.css'));

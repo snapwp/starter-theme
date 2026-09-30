@@ -1,0 +1,18 @@
+@theme {
+	--color-transparent: transparent;
+	--color-current: currentColor;
+	--color-black: #2C2820;
+	--color-white: #FAFAF7;
+	--color-scrollbar: #000000;
+	--color-base: #F9F7EF;
+	--color-mid-base: #F4F0DB;
+	--color-light-base: #F9F7EF;
+	--color-yellow: #D7A53A;
+	--color-linen: #E9E3C6;
+	--color-comfort: #826930;
+	--color-maddor: #88656D;
+	--color-weld: #4E5C39;
+	--color-indigo: #3F505E;
+	--color-woad: #81865E;
+	--color-logwood: #6C516E;
+}

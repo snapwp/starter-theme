@@ -1,0 +1,14 @@
+@utility container {
+	margin-inline: auto;
+	@apply px-24;
+	max-width: none !important;
+
+	@variant md {
+		@apply px-20;
+	}
+
+	@variant lg {
+		/* 1676px (104.25) minus the x padding (2.5rem) */
+		max-width: 102.25rem !important;
+	}
+}
