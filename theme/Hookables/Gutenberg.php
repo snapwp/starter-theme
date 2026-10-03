@@ -72,7 +72,14 @@ class Gutenberg extends Hookable
      */
     public function removeDefaultBlockStylesFromEditor($styles): void
     {
-        $handles = ['wp-block-library', 'wp-block-library-theme'];
+        $handles = [
+            'wp-block-library',
+            'wp-block-library-theme',
+            // block-library/reset.css: unlayered `revert` rules for headings, p, lists etc. beat Tailwind's
+            // layered utilities, so text sizes/weights/margins break in the editor. Core already skips it in
+            // the iframed editor for theme.json themes; this classic theme doesn't need it either.
+            'wp-reset-editor-styles',
+        ];
 
         foreach ($handles as $handle) {
             // Search and compare with the list of registered style handles:

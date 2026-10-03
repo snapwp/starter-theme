@@ -7,6 +7,12 @@
 @import "./grid.css";
 @import "./container.css";
 
+
+@theme {
+    /* reset the global spacing to be 1px */
+    --spacing: 0.0625rem;
+}
+
 body {
     @apply font-sans;
 }
