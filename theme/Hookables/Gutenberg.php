@@ -143,9 +143,14 @@ class Gutenberg extends Hookable
                     'render_callback' => [$this, 'render'],
                     'category' => strtolower($group),
                     'post_types' => $this->extractPostTypes('Post types', $content),
-                    'mode' => 'preview',
                     'icon' => $this->extractString('Icon', $content),
                     'keywords' => $this->extractArray('Keywords', $content),
+                    // Validate required/invalid fields in the editor and lock saving until fixed.
+                    // ACF only defaults these on for block.json registration, not acf_register_block_type().
+                    // validate_on_load also checks blocks as they first render (page load, newly inserted);
+                    // without it, a block whose fields were never touched always passes.
+                    'validate' => $validate = $this->extractBool('Validate', $content) ?? true,
+                    'validate_on_load' => $validate,
                     'supports' => [
                         'multiple' => $this->extractBool('Multiple', $content) ?? true
                     ],
