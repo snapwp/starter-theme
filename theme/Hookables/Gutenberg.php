@@ -43,6 +43,7 @@ class Gutenberg extends Hookable
         // are enabled, so the editor always reflects the theme's real styles.
         $this->addAction('init', 'addEditorStyles');
         $this->addAction('wp_default_styles', 'removeDefaultBlockStylesFromEditor', 9999);
+        $this->addFilter('mce_css', 'removeEditorStyleFromTinyMce');
 
         // Enqueue any additional JS in the editor
         // $this->addAction('enqueue_block_editor_assets', 'enqueueRawAssets');
@@ -65,6 +66,21 @@ class Gutenberg extends Hookable
     {
         Vite::registerEditorStyle('resources/assets/css/editor.css');
         //add_editor_style('resources/assets/css/main.css');
+    }
+
+    /**
+     * Keep editor.css out of classic TinyMCE editors (ACF WYSIWYG fields), which add_editor_style() also feeds.
+     * It's written for the block editor; Gutenberg gets its editor styles separately, so this doesn't affect it.
+     */
+    public function removeEditorStyleFromTinyMce(string $css): string
+    {
+        $path = 'resources/assets/css/editor.css';
+        $server = Vite::getViteServerUrl();
+        $url = $server ? $server . $path : snap_get_asset_url($path);
+
+        $styles = array_filter(explode(',', $css), fn ($style) => trim($style) !== $url);
+
+        return implode(',', $styles);
     }
 
     /**
@@ -136,6 +152,12 @@ class Gutenberg extends Hookable
                 $name = ucwords(str_replace(['.blade.php', '-'], ['', ' '], $file->getFilename()));
                 $content = \file_get_contents($file->getPathname());
 
+                // Inserter hover preview: only blocks with a screenshot get an example. The flag is only
+                // ever set on the example, so inserted blocks never see it (see render()).
+                $example = $this->getPreviewImage(sanitize_title($name))
+                    ? ['attributes' => ['mode' => 'preview', 'data' => ['_inserter_preview' => true]]]
+                    : null;
+
                 acf_register_block_type([
                     'name' => sanitize_title($name),
                     'title' => $name,
@@ -150,13 +172,33 @@ class Gutenberg extends Hookable
                     // validate_on_load also checks blocks as they first render (page load, newly inserted);
                     // without it, a block whose fields were never touched always passes.
                     'validate' => $validate = $this->extractBool('Validate', $content) ?? true,
+                    'hide_fields_in_sidebar' => true,
                     'validate_on_load' => $validate,
                     'supports' => [
                         'multiple' => $this->extractBool('Multiple', $content) ?? true
                     ],
+                    'example' => $example,
                 ]);
             }
         }
+    }
+
+    /**
+     * The block's inserter preview screenshot, as an absolute file path, or null if there isn't one.
+     * Drop a file named after the block into resources/assets/images/block-previews/ (e.g. about-us.png).
+     * No build step: render() embeds it directly.
+     */
+    private function getPreviewImage(string $slug): ?string
+    {
+        foreach (['png', 'jpg', 'webp'] as $extension) {
+            $path = Theme::getActiveThemePath("resources/assets/images/block-previews/{$slug}.{$extension}");
+
+            if (\file_exists($path)) {
+                return $path;
+            }
+        }
+
+        return null;
     }
 
     /**
@@ -179,6 +221,21 @@ class Gutenberg extends Hookable
      */
     public function render(array $block, $content = '', $is_preview = false, $post_id = 0, $wp_block = false, $context = false): void
     {
+        // Inserter hover panel: show the block's screenshot instead of rendering it without content
+        if (!empty($block['data']['_inserter_preview'])) {
+            $image = $this->getPreviewImage(str_replace('acf/', '', $block['name']));
+
+            if ($image) {
+                // Embedded as a data URI straight from resources/: the theme's .htaccess blocks browser
+                // requests to resources/, and this only ever renders in the inserter's hover panel.
+                $mime = wp_check_filetype($image)['type'] ?: 'image/png';
+                $src = "data:{$mime};base64," . base64_encode(\file_get_contents($image));
+
+                echo '<img src="' . esc_attr($src) . '" alt="" style="display:block;width:100%;height:auto">';
+                return;
+            }
+        }
+
         $data = [
             'block' => $block,
             'is_preview' => $is_preview,
